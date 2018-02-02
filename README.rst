@@ -2,14 +2,14 @@
 SimpleCrypto, Sigwo, mathframer
 ================================
 
-ÀÛ¼ºÇÑ ³»¿ëÀ» ±â¹İÀ¸·Î ¿¡·¯ ¹× ÇÑ±Û¹öÀüÀ¸·Î ¼öÁ¤ÇÑ ³»¿ëÀÔ´Ï´Ù.
+ì‘ì„±í•œ ë‚´ìš©ì„ ê¸°ë°˜ìœ¼ë¡œ ì—ëŸ¬ ë° í•œê¸€ë²„ì „ìœ¼ë¡œ ìˆ˜ì •í•œ ë‚´ìš©ì…ë‹ˆë‹¤.
 --------------------------------------------------------------
 
-¸¶Áö¸· ¼öÁ¤ÀÏÀÚ : 2018.02.02
-----------------------------
+ë§ˆì§€ë§‰ ìˆ˜ì •ì¼ì : 2018.02.02
 
 
-ÆÄÀÌ½ã ¹× ´Ù¸¥ ÇÁ·Î±×·¥ ¼³Ä¡
+
+íŒŒì´ì¬ ë° ë‹¤ë¥¸ í”„ë¡œê·¸ë¨ ì„¤ì¹˜
 ----------------------------
 .. code-block:: bash
     
@@ -17,7 +17,7 @@ SimpleCrypto, Sigwo, mathframer
     sudo apt-get install git curl vim -y
 
 
-ÆÄÀÌ½ã ÆĞÅ°Áö ¾÷±×·¹ÀÌµå ¹× °¡»óÈ¯°æ ¼³Ä¡
+íŒŒì´ì¬ íŒ¨í‚¤ì§€ ì—…ê·¸ë ˆì´ë“œ ë° ê°€ìƒí™˜ê²½ ì„¤ì¹˜
 -----------------------------------------
 .. code-block:: bash
 
@@ -27,7 +27,7 @@ SimpleCrypto, Sigwo, mathframer
     sudo vim .bashrc
 
 
-.bashrc ³»¿ë ¼öÁ¤(¸Ç ¾Æ·¡ Ãß°¡)
+.bashrc ë‚´ìš© ìˆ˜ì •(ë§¨ ì•„ë˜ ì¶”ê°€)
 -------------------------------
 .. code-block:: bash
 
@@ -35,14 +35,14 @@ SimpleCrypto, Sigwo, mathframer
     source /usr/local/bin/virtualenvwrapper.sh
 
 
-ÀçºÎÆÃ
+ì¬ë¶€íŒ…
 ------
 .. code-block:: bash
 
     sudo reboot now
 
 
-rabbitmq-server ¼³Ä¡¸¦ À§ÇÑ erlang ¼³Ä¡
+rabbitmq-server ì„¤ì¹˜ë¥¼ ìœ„í•œ erlang ì„¤ì¹˜
 ---------------------------------------
 .. code-block:: bash
 
@@ -52,7 +52,7 @@ rabbitmq-server ¼³Ä¡¸¦ À§ÇÑ erlang ¼³Ä¡
     sudo apt-get install erlang erlang-nox
 
 
-rabbitmq deb ¹× Public Å° »ı¼º
+rabbitmq deb ë° Public í‚¤ ìƒì„±
 ------------------------------
 .. code-block:: bash
 
@@ -61,7 +61,7 @@ rabbitmq deb ¹× Public Å° »ı¼º
     sudo apt-get update
 
 
-update ¿À·ù ½Ã | Ubuntu 16.04
+update ì˜¤ë¥˜ ì‹œ | Ubuntu 16.04
 -----------------------------
 .. code-block:: bash
 
@@ -70,7 +70,7 @@ update ¿À·ù ½Ã | Ubuntu 16.04
     sudo apt-get update
 
 
-update ¿À·ù ½Ã | Ubuntu 17.10
+update ì˜¤ë¥˜ ì‹œ | Ubuntu 17.10
 -----------------------------
 .. code-block:: bash
     echo "deb https://dl.bintray.com/rabbitmq/debian artful main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list
@@ -78,7 +78,7 @@ update ¿À·ù ½Ã | Ubuntu 17.10
     sudo apt-get update
 
 
-rabbitmq-server ¼³Ä¡
+rabbitmq-server ì„¤ì¹˜
 --------------------
 .. code-block:: bash
 
@@ -86,24 +86,24 @@ rabbitmq-server ¼³Ä¡
     sudo vim /etc/default/rabbitmq-server
 
 
-rabbitmq-server ¼³Á¤
+rabbitmq-server ì„¤ì •
 --------------------
 .. code-block:: bash
 
-    unlimit -n 1024 # ÁÖ¼® ÇØÁ¦
+    unlimit -n 1024 # ì£¼ì„ í•´ì œ
 
 
-rabbitmq-server °èÁ¤ »ı¼º ¼³Á¤ ¹× GUI È°¼ºÈ­
+rabbitmq-server ê³„ì • ìƒì„± ì„¤ì • ë° GUI í™œì„±í™”
 --------------------------------------------
 .. code-block:: bash
 
     sudo rabbitmq-plugins enable rabbitmq_management # Browser GUI Enabled
     sudo rabbitmqctl add_user radmin radmin # add_user [username] [password]
     sudo rabbitmqctl set_user_tags radmin administrator # [username] [permission]
-    sudo rabbitmqctl set_permissions ?p / radmin ¡°.*¡± ¡°.*¡± ¡°.*¡± # [owner] [group] [other]
+    sudo rabbitmqctl set_permissions ?p / radmin â€œ.*â€ â€œ.*â€ â€œ.*â€ # [owner] [group] [other]
 
 
-rabbitmq-server GUI·Î º¸±â
+rabbitmq-server GUIë¡œ ë³´ê¸°
 --------------------------
     http://localhost:15672
     username : radmin
