@@ -1,0 +1,3 @@
+[console_scripts]
+pp = powerpool.main:main
+

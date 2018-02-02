@@ -1,0 +1,81 @@
+# -----------------------------------------
+# PowerPool configuration file
+# -----------------------------------------
+# Each item in the list is a discreet component in powerpool that will get
+# created Type specifies the fully qualified python path to the module. A basic
+# powerpool server will contain one of each of the following:
+# * Jobmanager: creates jobs to be sent to miners and submits solved blocks
+# * StratumServer: Accepts stratum connections and sends jobs to users, accepts
+#       shares, etc
+# * Reporter: records submitted shares and solved blocks
+# * Manager: Manages logging, starting and stopping the server, and stats
+#       collection
+#
+# Optional modules:
+# * ServerMonitor: Exposes and HTTP port to view system health and connected
+#       worker information
+#
+# Each of these modules has default configurations which can be viewed
+# and explained in the defaults.yml file
+---
+PP:
+    type: powerpool.main.PowerPool
+
+RR:
+    type: powerpool.reporters.RedisReporter
+    redis:
+        db: 15
+    # Configures special users which will get all the pool shares reported to
+    # them
+    pool_report_configs:
+        - worker_format_string: "{chain}"
+          user: "pool"
+        - worker_format_string: "{currency}"
+          user: "pool_currency"
+          report_merge: True
+        - worker_format_string: "{algo}"
+          user: "pool_algo"
+
+CR:
+    type: powerpool.reporters.CeleryReporter
+DR:
+    type: powerpool.reporters.DoubleReporter
+    reporters:
+        - RR
+        - CR
+
+LTC:
+    type: powerpool.jobmanagers.MonitorNetwork
+    merged:
+        - SYS
+    algo: scrypt
+    currency: LTC
+    pool_address: mri1PEngsRuU6aLKQJ5gGePUdEo76C6DeT
+    coinservs:
+        - port: 20001
+          address: 127.0.0.1
+          username: admin1
+          password: 123
+          poll_priority: 100
+
+SYS:
+    type: powerpool.jobmanagers.MonitorAuxNetwork
+    algo: scrypt
+    signal: 28
+    currency: SYS
+    coinservs:
+        - port: 19001
+          address: 127.0.0.1
+          username: admin1
+          password: 123
+          poll_priority: 100
+
+TEST_STRAT:
+    type: powerpool.stratum_server.StratumServer
+    algo: scrypt
+    jobmanager: LTC
+    reporter: DR
+    start_difficulty: 0.1
+
+MON:
+    type: powerpool.monitor.ServerMonitor

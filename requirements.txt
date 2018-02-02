@@ -1,0 +1,17 @@
+# Top level requirements
+git+https://github.com/simplecrypto/cryptokit.git@v0.2.10#egg=cryptokit
+gevent==1.0.1
+PyYAML==3.10
+Flask==0.10.1
+setproctitle==1.1.8
+
+# Dependencies of top level req
+Jinja2==2.7.3
+MarkupSafe==0.23
+Werkzeug==0.9.6
+argparse==1.2.1
+future==0.11.2
+greenlet==0.4.3
+itsdangerous==0.24
+wsgiref==0.1.2
+gevent-helpers==0.1.1
