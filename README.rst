@@ -8,6 +8,11 @@ SimpleCrypto, Sigwo, mathframer
 마지막 수정일자 : 2018.02.05
 
 
+기부하기
+-------
+    SUM : SThUc3o8hpnSyedGJi4eGjohvKu1TtA48a
+
+
 
 파이썬 및 다른 프로그램 설치
 ----------------------------
