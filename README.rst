@@ -73,6 +73,7 @@ update 오류 시 | Ubuntu 16.04
 update 오류 시 | Ubuntu 17.10
 -----------------------------
 .. code-block:: bash
+
     echo "deb https://dl.bintray.com/rabbitmq/debian artful main" | sudo tee /etc/apt/sources.list.d/bintray.rabbitmq.list
     wget -O- https://www.rabbitmq.com/rabbitmq-release-signing-key.asc | sudo apt-key add -
     sudo apt-get update
