@@ -113,8 +113,7 @@ rabbitmq-server GUI로 보기
 
 PowerPool 설치 및 설정
 ---------------------
-
-..code-block:: bash
+.. code-block:: bash
     
     mkvirtualenv pp
     cd .virtualenv/pp
@@ -125,8 +124,7 @@ PowerPool 설치 및 설정
     
 SSL.py 수정
 -----------
-
-..code-block:: bash
+.. code-block:: bash
     
     sudo vim home/username/.virtualenvs/pp/local/lib/python2.7/site-packages/gevent/ssl.py
     
@@ -140,8 +138,7 @@ SSL.py 수정
     
 PowerPool 나머지 설치
 --------------------
-
-..code-block:: bash
+.. code-block:: bash
     
     pip install -e .
     #pip install vtc_scrypt # scryptn Algorithm 지원
@@ -153,8 +150,7 @@ PowerPool 나머지 설치
     
 redis & celery 설치
 ------------------
-
-..code-block:: bash
+.. code-block:: bash
     
     sudo apt-get install redis-server -y
     sudo pip install redis
@@ -163,8 +159,7 @@ redis & celery 설치
 
 Linux Wine 설치[선택사항]
 ------------------------
-
-..code-block:: bash
+.. code-block:: bash
 
     sudo add-apt-repository ppa:wine/wine-builds
     sudo apt-get update
@@ -173,16 +168,14 @@ Linux Wine 설치[선택사항]
 
 SOOM Wallet Download
 --------------------
-
-..code-block:: bash
+.. code-block:: bash
     
     https://github.com/YankeeTube/Shell-Script/raw/master/soomcoin-qtV1.003n.zip
     
 
 PowerPool Monitor.py 수정
 ------------------------
-
-..code-block:: bash
+.. code-block:: bash
     
     sudo vim .virtualenvs/pp/powerpool/monitor.py
     # Line 77
@@ -194,8 +187,7 @@ PowerPool Monitor.py 수정
     
 YAML 설정
 ---------
-
-..code-block:: bash
+.. code-block:: bash
     
     sudo vim ~/.virtualenvs/pp/powerpool/config.yml
     
