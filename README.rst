@@ -284,3 +284,12 @@ YAML 설정
         MON:
             type: powerpool.monitor.ServerMonitor
 
+
+
+
+PowerPool 실행
+--------------
+
+.. code-block:: bash
+
+    username@hostname:./virtualenvs/pp/powerpool$ pp config.yml
